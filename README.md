@@ -1,26 +1,12 @@
 
 # ejercicio9claudiasuano
 
-<!-- badges: start -->
-<!-- badges: end -->
+Paquete de R desarrollado para consultar y analizar ensayos clínicos de la base de datos remota **AACT (ClinicalTrials.gov)** mediante consultas SQL.
 
-The goal of ejercicio9claudiasuano is to ...
+## Instalación
 
-## Installation
+Puedes instalar la versión en desarrollo de este paquete directamente desde GitHub ejecutando en R:
 
-You can install the development version of ejercicio9claudiasuano from [GitHub](https://github.com/) with:
-
-``` r
-# install.packages("pak")
-pak::pak("clausuan/ejercicio9claudiasuano")
-```
-
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-library(ejercicio9claudiasuano)
-## basic example code
-```
-
+```r
+# install.packages("devtools")
+devtools::install_github("clausuan/ejercicio9claudiasuano")
