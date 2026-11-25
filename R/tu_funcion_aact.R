@@ -1,13 +1,13 @@
-#' Comparar tipos de intervención en ensayos clínicos según patología
+#' Comparar tipos de intervencion en ensayos clinicos segun patologia
 #'
 #' Consulta la base de datos remota AACT combinando las tablas \code{ctgov.studies},
 #' \code{ctgov.interventions} y \code{ctgov.conditions} mediante SQL para contar
-#' el número de ensayos clínicos según el tipo de intervención (\code{intervention_type})
-#' en una patología específica.
+#' el numero de ensayos clinicos segun el tipo de intervencion (\code{intervention_type})
+#' en una patologia especifica.
 #'
-#' @param con Objeto de conexión a la base de datos AACT (creado con \code{DBI::dbConnect}).
+#' @param con Objeto de conexion a la base de datos AACT (creado con \code{DBI::dbConnect}).
 #' @param patologia Cadena de texto con el nombre (o parte del nombre) de la enfermedad
-#'   en inglés tal como figura en ClinicalTrials.gov (por defecto, \code{"Breast Cancer"}).
+#'   en ingles tal como figura en ClinicalTrials.gov (por defecto, \code{"Breast Cancer"}).
 #'
 #' @return Un \code{data.frame} con las columnas \code{tipo_intervencion} y \code{n_estudios},
 #'   ordenado de mayor a menor frecuencia.
@@ -22,10 +22,10 @@
 #' }
 intervenciones_por_patologia <- function(con, patologia = "Breast Cancer") {
   if (!DBI::dbIsValid(con)) {
-    stop("La conexión a la base de datos no es válida o está cerrada.")
+    stop("La conexion a la base de datos no es valida o esta cerrada.")
   }
   if (!is.character(patologia) || length(patologia) != 1 || nchar(trimws(patologia)) == 0) {
-    stop("El parámetro 'patologia' debe ser una cadena de texto no vacía.")
+    stop("El parametro 'patologia' debe ser una cadena de texto no vacia.")
   }
 
   patron <- paste0("%", patologia, "%")
